@@ -1,11 +1,15 @@
 package com.spider.client;
 
-import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.api.ModInitializer;
+import com.spiderclient.fps.FPSController;
 
-public class SpiderClient implements ClientModInitializer {
+public class SpiderClient implements ModInitializer {
+
+    public static final String MOD_ID = "spiderclient";
 
     @Override
-    public void onInitializeClient() {
-        System.out.println("[Spider Client] Initialized successfully (1.21.x)");
+    public void onInitialize() {
+        FPSController.init();
+        System.out.println("[SpiderClient] FPS Core Initialized");
     }
 }
