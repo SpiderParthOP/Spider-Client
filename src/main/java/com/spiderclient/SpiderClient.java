@@ -1,4 +1,4 @@
-package com.spider.client;
+package com.spiderclient;
 
 import net.fabricmc.api.ModInitializer;
 import com.spiderclient.fps.FPSController;
