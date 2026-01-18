@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "spiderclient",
+  "version": "1.0.0",
+  "name": "Spider Client",
+  "description": "Spider Client for Minecraft 1.21.x",
+  "authors": ["SpiderParthOP"],
+  "license": "All Rights Reserved",
+  "icon": "assets/spiderclient/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "com.spider.client.SpiderClient"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.15.0",
+    "minecraft": "1.21.x",
+    "fabric-api": "*"
+  }
+}
