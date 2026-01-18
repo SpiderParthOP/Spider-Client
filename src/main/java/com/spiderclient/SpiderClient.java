@@ -1,15 +1,15 @@
 package com.spiderclient;
 
-import net.fabricmc.api.ModInitializer;
-import com.spiderclient.fps.FPSController;
+import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
+import com.spiderclient.fps.DynamicScaler;
 
-public class SpiderClient implements ModInitializer {
+@Override
+public void onInitialize() {
+    FPSController.init();
 
-    public static final String MOD_ID = "spiderclient";
+    ClientTickEvents.END_CLIENT_TICK.register(client -> {
+        DynamicScaler.tick();
+    });
 
-    @Override
-    public void onInitialize() {
-        FPSController.init();
-        System.out.println("[SpiderClient] FPS Core Initialized");
-    }
+    System.out.println("[SpiderClient] FPS Core Initialized");
 }
